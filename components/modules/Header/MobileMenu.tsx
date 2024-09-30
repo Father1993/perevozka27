@@ -1,47 +1,53 @@
-import { useState } from 'react'
 import Link from 'next/link'
 
-const MobileMenu = () => {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen)
-  }
-
-  return (
-    <div>
+const MobileMenu = ({ onClose }: { onClose: () => void }) => (
+  <div className='fixed inset-0 bg-gray-800 bg-opacity-90 flex flex-col items-center justify-center z-50'>
+    <ul className='text-white text-3xl space-y-6'>
       <button
-        onClick={toggleMenu}
-        className='text-white bg-blue-600 p-2 rounded-lg focus:outline-none'
+        className='text-white absolute top-4 right-4 text-2xl hover:text-blue-500'
+        onClick={onClose}
       >
-        {isOpen ? 'Закрыть меню' : 'Открыть меню'}
+        &times;
       </button>
-      {isOpen && (
-        <div className='bg-gray-800 text-white p-4 rounded-lg mt-2'>
-          <nav className='flex flex-col space-y-2'>
-            <Link href='/' className='hover:text-blue-500'>
-              Главная
-            </Link>
-            <Link href='/about' className='hover:text-blue-500'>
-              О нас
-            </Link>
-            <Link href='/services' className='hover:text-blue-500'>
-              Услуги
-            </Link>
-            <Link
-              href='/calculator'
-              className='text-orange-700 hover:text-blue-500'
-            >
-              Калькулятор цен
-            </Link>
-            <Link href='/price' className='hover:text-blue-500'>
-              Прайс
-            </Link>
-          </nav>
-        </div>
-      )}
-    </div>
-  )
-}
+      <li>
+        <Link href='/' className='hover:text-blue-500 transition duration-300'>
+          Главная
+        </Link>
+      </li>
+      <li>
+        <Link
+          href='/about'
+          className='hover:text-blue-500 transition duration-300'
+        >
+          О нас
+        </Link>
+      </li>
+      <li>
+        <Link
+          href='/services'
+          className='hover:text-blue-500 transition duration-300'
+        >
+          Услуги
+        </Link>
+      </li>
+      <li>
+        <Link
+          href='/calculator'
+          className='hover:text-orange-500 transition duration-300'
+        >
+          Калькулятор цен
+        </Link>
+      </li>
+      <li>
+        <Link
+          href='/price'
+          className='hover:text-blue-500 transition duration-300'
+        >
+          Прайс
+        </Link>
+      </li>
+    </ul>
+  </div>
+)
 
 export default MobileMenu

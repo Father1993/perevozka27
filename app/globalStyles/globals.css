@@ -84,6 +84,30 @@ body::-webkit-scrollbar-thumb:hover {
   overflow: hidden;
 }
 
+.burger-menu {
+  background-image: url(/img/burger.svg);
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.blink {
+  animation: blink 1s infinite; /* Мигает каждые 1 секунду */
+}
+
 /* @font-face {
   font-display: swap;
   font-family: Rostelecom Basis;
