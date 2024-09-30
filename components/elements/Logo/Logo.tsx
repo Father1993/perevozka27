@@ -2,12 +2,7 @@ import Link from 'next/link'
 
 const Logo = () => (
   <Link className='logo' href='/'>
-    <img
-      className='logo__img'
-      src='/img/logo.png'
-      alt='Perevozka27.ru Logo'
-      style={{ width: 270 }}
-    />
+    <img src='/img/logo.png' alt='Perevozka27.ru Logo' style={{ width: 270 }} />
   </Link>
 )
 

@@ -1,7 +1,10 @@
 /* eslint-disable max-len */
 import type { Metadata, Viewport } from 'next'
 import PagesLayout from '@/components/layouts/PageLayout'
+import './globalStyles/normalize.css'
 import './globalStyles/globals.css'
+import './globalStyles/header.css'
+import './globalStyles/cookie-popup.css'
 
 export const metadata: Metadata = {
   title: 'Perevozka27.ru | Грузоперевозки по Хабаровску и краю',

@@ -2,33 +2,37 @@
 import Link from 'next/link'
 import Logo from '@/components/elements/Logo/Logo'
 
-const Header = () => {
-  console.log('')
-
-  return (
-    <header className='header'>
-      <div className='container header__container'>
-        <button className='btn-reset header__burger'>text</button>
-        <div className='header__logo'>
-          <Logo />
-        </div>
-        <ul className='header__links list-reset'>
-          <li className='header__links__item'>
-            <button className='btn-reset header__links__item__btn header__links__item__btn--search' />
-          </li>
-          <li className='header__links__item'>
-            <Link
-              href='/favorites'
-              className='header__links__item__btn header__links__item__btn--favorites'
-            ></Link>
-          </li>
-          <li className='header__links__item'></li>
-          <li className='header__links__item'></li>
-          <li className='header__links__item header__links__item--profile'></li>
-        </ul>
+const Header = () => (
+  <header className='header'>
+    <div className='container mx-auto flex justify-between items-center p-4'>
+      <div className='header__logo'>
+        <Logo />
       </div>
-    </header>
-  )
-}
+      <nav className='flex space-x-6'>
+        <Link href='/' className='text-white-700 hover:text-blue-500'>
+          Главная
+        </Link>
+        <Link href='/about' className='text-white-700 hover:text-blue-500'>
+          О нас
+        </Link>
+        <Link href='/services' className='text-white-700 hover:text-blue-500'>
+          Услуги
+        </Link>
+        <Link
+          href='/calculator'
+          className='text-orange-700 hover:text-blue-500'
+        >
+          Калькулятор цен
+        </Link>
+        <Link href='/price' className='text-white-700 hover:text-blue-500'>
+          Прайс
+        </Link>
+      </nav>
+      <button className='bg-green-500 text-white px-4 py-2 rounded hover:bg-blue-600'>
+        ПОЗВОНИТЬ!
+      </button>
+    </div>
+  </header>
+)
 
 export default Header
