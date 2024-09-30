@@ -14,10 +14,7 @@ const Footer = () => (
           <a href='mailto:perevozka27@gmail.com'>perevozka27@gmail.com</a>
         </span>
       </div>
-      <ul
-        className='list-reset footer__socials flex space-x-4 mt-4 md:mt-0'
-        mb-2
-      >
+      <ul className='list-reset footer__socials flex space-x-4 mt-4 md:mt-0 mb-2'>
         <li className='footer__socials__item'>
           <a
             href='https://t.me/perevozka27'
