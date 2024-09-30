@@ -1,14 +1,13 @@
 'use client'
 
-const Hero = () => {
-  console.log('')
-
-  return (
-    <section>
-      <h1 className='visually-hidden'>title</h1>
-      <div className='container'></div>
-    </section>
-  )
-}
+const Hero = () => (
+  <section className='container'>
+    <h1 className='visually-hidden'>
+      Главная страница компании- Перевозка 27. Перевозка груза, грузчики, вывоз
+      мусора, переезды
+    </h1>
+    <div className='container'>Главная</div>
+  </section>
+)
 
 export default Hero

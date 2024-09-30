@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
