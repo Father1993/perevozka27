@@ -1,12 +1,10 @@
 'use client'
 import Hero from '@/components/modules/MainPage/Hero/Hero'
 
-const MainPage = () => {
-  return (
-    <main>
-      <Hero />
-    </main>
-  )
-}
+const MainPage = () => (
+  <main>
+    <Hero />
+  </main>
+)
 
 export default MainPage

@@ -1,12 +1,16 @@
+/* eslint-disable max-len */
 'use client'
+import Form from './Form'
+import MainTop from './MainTop'
+import Services from './Services'
+import WhyUs from './WhyUs'
 
 const Hero = () => (
-  <section className='container'>
-    <h1 className='visually-hidden'>
-      Главная страница компании- Перевозка 27. Перевозка груза, грузчики, вывоз
-      мусора, переезды
-    </h1>
-    <div className='container'>Главная</div>
+  <section className='container mx-auto py-10 px-4'>
+    <MainTop />
+    <WhyUs />
+    <Services />
+    <Form />
   </section>
 )
 

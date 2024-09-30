@@ -1,7 +1,7 @@
 import Logo from '@/components/elements/Logo/Logo'
 
 const Footer = () => (
-  <footer className='footer bg-gray-800 text-white py-6'>
+  <footer className='footer bg-grey-800 text-white py-6'>
     <div className='container mx-auto flex flex-col md:flex-row justify-between items-center'>
       <div className='footer__logo mb-4 md:mb-0'>
         <Logo />
