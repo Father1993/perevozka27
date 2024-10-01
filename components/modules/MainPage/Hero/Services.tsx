@@ -34,7 +34,7 @@ const Services = () => {
       <h2 className='text-4xl font-bold text-blue-800 mb-8 text-center'>
         Наши услуги
       </h2>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+      <div id='services' className='grid grid-cols-1 md:grid-cols-2 gap-8'>
         {services.map((service, index) => (
           <motion.div
             key={index}

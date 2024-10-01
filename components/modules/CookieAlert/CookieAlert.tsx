@@ -26,7 +26,16 @@ const CookieAlert = ({
         className='btn-reset cookie-popup__close'
         onClick={handleCloseAlert}
       />
-      <p className='cookie-popup__text'>Текст кук</p>
+      <p className='cookie-popup__text'>
+        Мы используем файлы cookie для улучшения работы сайта, анализа трафика и
+        персонализации контента. Продолжая использовать наш сайт, вы
+        соглашаетесь с нашей{' '}
+        <a href='/privacy-policy' className='underline hover:text-blue-600'>
+          политикой использования файлов cookie
+        </a>
+        . Вы можете изменить настройки cookie в любое время в настройках вашего
+        браузера.
+      </p>
       <button
         className='btn-reset cookie-popup__accept'
         onClick={handleAcceptCookie}

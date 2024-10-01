@@ -1,42 +1,64 @@
-import Logo from '@/components/elements/Logo/Logo'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTelegram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
 
 const Footer = () => (
-  <footer className='footer bg-grey-800 text-white py-6'>
-    <div className='container mx-auto flex flex-col md:flex-row justify-between items-center'>
-      <div className='footer__logo mb-4 md:mb-0'>
-        <Logo />
+  <footer className='bg-gray-900 text-gray-300 py-8'>
+    <div className='container mx-auto px-4'>
+      <div className='flex flex-wrap justify-between items-center'>
+        <div className='w-full md:w-auto mb-4 md:mb-0'>
+          <p className='text-sm'>
+            &copy; {new Date().getFullYear()} Perevozka27. Все права защищены.
+          </p>
+        </div>
+        <div className='w-full md:w-auto mb-4 md:mb-0'>
+          <div className='flex justify-center md:justify-end space-x-4'>
+            <a
+              href='tel:+79622285219'
+              className='hover:text-white transition-colors flex items-center'
+            >
+              <FontAwesomeIcon icon={faPhone} className='mr-2' />
+              <span className='text-sm'>+7 (962) 228-52-19</span>
+            </a>
+            <a
+              href='mailto:perevozka27@gmail.com'
+              className='hover:text-white transition-colors flex items-center'
+            >
+              <FontAwesomeIcon icon={faEnvelope} className='mr-2' />
+              <span className='text-sm'>perevozka27@gmail.com</span>
+            </a>
+          </div>
+        </div>
+        <div className='w-full md:w-auto'>
+          <div className='flex justify-center space-x-4'>
+            <a
+              href='https://t.me/perevozka27'
+              className='text-xl hover:text-white transition-colors'
+              aria-label='Telegram'
+            >
+              <FontAwesomeIcon icon={faTelegram} size='2x' />
+            </a>
+            <a
+              href='https://wa.me/+79622285219'
+              className='text-xl hover:text-white transition-colors'
+              aria-label='WhatsApp'
+            >
+              <FontAwesomeIcon icon={faWhatsapp} size='2x' />
+            </a>
+          </div>
+        </div>
       </div>
-      <div className='footer__contacts flex flex-col md:flex-row space-x-4 text-center mb-4'>
-        <span>
-          <a href='tel:+7'>+7 (962) 228 52 19</a>
-        </span>
-        <span>
-          <a href='mailto:perevozka27@gmail.com'>perevozka27@gmail.com</a>
-        </span>
+      <div className='mt-5 pt-2 border-t border-gray-700 flex justify-center items-center text-sm'>
+        <p className='text-gray-500'>
+          Разработка{' '}
+          <a
+            href='https://spinej.ru'
+            className='hover:text-white transition-colors '
+          >
+            SAG
+          </a>
+        </p>
       </div>
-      <ul className='list-reset footer__socials flex space-x-4 mt-4 md:mt-0 mb-2'>
-        <li className='footer__socials__item'>
-          <a
-            href='https://t.me/perevozka27'
-            className='footer__socials__item__link'
-          >
-            Telegram
-          </a>
-        </li>
-        <li className='footer__socials__item'>
-          <a
-            href='https://wa.me/+79622285219'
-            className='footer__socials__item__link'
-          >
-            WhatsApp
-          </a>
-        </li>
-        <li className='footer__socials__item'>
-          <a href='https://avito.ru' className='footer__socials__item__link'>
-            Avito
-          </a>
-        </li>
-      </ul>
     </div>
   </footer>
 )

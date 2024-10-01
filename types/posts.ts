@@ -8,6 +8,9 @@ export interface Post {
 export interface PostItem {
   slug: string
   title: string
+  date?: string
+  content?: string
+  description?: string
 }
 
 export interface BlogPageProps {
