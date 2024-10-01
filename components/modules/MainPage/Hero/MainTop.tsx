@@ -91,7 +91,7 @@ const MainTop = () => {
         className='mt-12 bg-yellow-400 text-blue-900 font-bold py-3 px-8 rounded-full text-xl shadow-lg hover:bg-yellow-300 transition duration-300 mx-auto block'
         onClick={handleUseCalculate}
       >
-        Калькулятор цен
+        Рассчитать стоимость
       </motion.button>
     </motion.div>
   )
