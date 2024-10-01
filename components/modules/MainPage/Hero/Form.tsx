@@ -35,7 +35,7 @@ const Form = () => {
       <div className='relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12'>
         <div className='text-white'>
           <h2 className='text-3xl font-bold mb-6'>Свяжитесь с нами</h2>
-          <div className='space-y-4'>
+          <div id='contacts' className='space-y-4'>
             {contactInfo.map((item, index) => (
               <motion.div
                 key={index}

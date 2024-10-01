@@ -13,18 +13,12 @@ export const metadata: Metadata = {
   keywords:
     'грузоперевозки, Хабаровск, край, перевозка грузов, доставка грузов, транспортная компания, грузовое такси, квартирный переезд, офисный переезд, перевозка мебели, перевозка техники, недорого, под ключ, с грузчиками, услуги, переезды, грузчики, доставка, транспортная',
   icons: {
-    icon: '/favicon-32x32.png',
-    apple: '/apple-touch-icon.png',
-    other: [
-      {
-        rel: 'icon',
-        url: '/favicon-16x16.png',
-      },
-      {
-        rel: 'manifest',
-        url: '/site.webmanifest',
-      },
+    icon: [
+      { url: '/img/favicon.ico', sizes: 'any' },
+      { url: '/img/favicon-16x16.png', sizes: '16x16' },
+      { url: '/img/favicon-32x32.png', sizes: '32x32' },
     ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
   },
 }
 

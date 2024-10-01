@@ -12,7 +12,7 @@ const Services = () => {
       price: '1 200₽/час',
       description:
         'Наш грузовик с водителем предоставляет надежные и комфортные услуги по перевозке грузов. Мы гарантируем своевременную доставку и безопасность груза.',
-      bgImage: '/images/truck-service.jpg',
+      bgImage: '/img/truck-service.jpg',
     },
     {
       icon: faTruckFast,
@@ -20,7 +20,7 @@ const Services = () => {
       price: '700₽/час',
       description:
         'Наши грузчики профессионально и быстро выполнят погрузочно-разгрузочные работы. Мы ценим ваше время и гарантируем качественное обслуживание.',
-      bgImage: '/images/loader-service.jpg',
+      bgImage: '/img/loader-service.jpg',
     },
   ]
 

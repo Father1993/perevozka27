@@ -6,7 +6,6 @@ const CalculatePage = () => (
   <main>
     <section className='container'>
       <div>
-        <h1>Калькулятор</h1>
         <PriceCalculator />
       </div>
     </section>

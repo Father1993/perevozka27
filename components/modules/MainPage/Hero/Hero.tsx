@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 'use client'
+import CalculatePage from '@/components/templates/Calculate/CalculatePage'
 import Form from './Form'
 import MainTop from './MainTop'
 import Services from './Services'
@@ -10,6 +11,7 @@ const Hero = () => (
     <MainTop />
     <WhyUs />
     <Services />
+    <CalculatePage />
     <Form />
   </section>
 )

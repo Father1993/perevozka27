@@ -1,21 +1,23 @@
-export interface PostPageProps {
-  post: {
-    slug: string
-    title: string
-    content: string
-    date: string
-  }
-}
-
-export interface PostProps {
-  params: { slug: string }
-}
-
 export interface Post {
+  slug: string
+  title: string
+  date?: string
+  content?: string
+}
+
+export interface PostItem {
   slug: string
   title: string
 }
 
 export interface BlogPageProps {
-  posts: Post[]
+  posts: PostItem[]
+}
+
+export interface PostPageProps {
+  post: Post
+}
+
+export interface PostProps {
+  params: { slug: string }
 }

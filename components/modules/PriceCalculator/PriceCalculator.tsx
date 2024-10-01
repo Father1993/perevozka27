@@ -6,18 +6,22 @@ import {
   faMoneyBillWave,
   faClock,
   faCalculator,
+  faPerson,
 } from '@fortawesome/free-solid-svg-icons'
 
 const PriceCalculator = () => {
   const [hours, setHours] = useState<string>('2')
   const [totalPrice, setTotalPrice] = useState<number>(0)
+  const [needLoader, setNeedLoader] = useState<boolean>(false)
 
   const calculatePrice = () => {
     const basePrice = 1200
+    const loaderPrice = 700
     const minHours = 2
     const inputHours = Math.max(Number(hours), minHours)
     const price = Math.ceil(inputHours * basePrice)
-    setTotalPrice(price)
+    const totalPrice = needLoader ? price + inputHours * loaderPrice : price
+    setTotalPrice(totalPrice)
   }
 
   return (
@@ -47,10 +51,28 @@ const PriceCalculator = () => {
             min='2'
             className='w-full p-3 border-2 border-indigo-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-indigo-800 text-lg transition duration-200 ease-in-out'
           />
-          <span className='absolute right-3 top-[2.7rem] text-indigo-400 text-sm'>
+          <span className='absolute right-10 top-[2.7rem] text-indigo-400 text-sm'>
             мин. 2 часа
           </span>
         </div>
+
+        <div className='flex items-center'>
+          <input
+            type='checkbox'
+            id='needLoader'
+            checked={needLoader}
+            onChange={(e) => setNeedLoader(e.target.checked)}
+            className='w-5 h-5 text-indigo-600 border-indigo-300 rounded focus:ring-indigo-500'
+          />
+          <label
+            htmlFor='needLoader'
+            className='ml-2 text-indigo-700 font-semibold'
+          >
+            <FontAwesomeIcon icon={faPerson} className='mr-2' />
+            Услуги грузчика (+700₽/ч)
+          </label>
+        </div>
+
         <motion.button
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.98 }}
@@ -66,14 +88,14 @@ const PriceCalculator = () => {
             animate={{ opacity: 1, scale: 1 }}
             className='mt-6 p-4 bg-white rounded-lg shadow-inner'
           >
-            <p className='text-2xl font-bold text-indigo-800 flex items-center justify-center'>
+            <motion.p className='text-2xl font-bold text-indigo-800 flex items-center justify-center'>
               <FontAwesomeIcon
                 icon={faMoneyBillWave}
                 className='mr-3 text-green-500'
               />
               <span className='mr-2'>Стоимость:</span>
               <span className='text-green-600'>{totalPrice} ₽</span>
-            </p>
+            </motion.p>
           </motion.div>
         )}
       </div>
