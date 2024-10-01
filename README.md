@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Perevozka27 - Сервис грузоперевозок в Хабаровске
 
-## Getting Started
+## О проекте
 
-First, run the development server:
+Perevozka27 - это веб-приложение, разработанное на Next.js, предоставляющее услуги грузоперевозок в Хабаровске и Хабаровском крае. Наш сервис предлагает быстрые и надежные грузоперевозки, от небольших посылок до крупногабаритных грузов.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Основные функции
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Заказ грузоперевозок онлайн
+- Блог с полезными статьями о переездах и грузоперевозках
+- Адаптивный дизайн для мобильных устройств и десктопов
+- SEO-оптимизация для лучшей видимости в поисковых системах
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Технологии
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Next.js 14
+- React 18
+- TypeScript
+- Tailwind CSS
+- Framer Motion для анимаций
+- FontAwesome для иконок
 
-## Learn More
+## Начало работы
 
-To learn more about Next.js, take a look at the following resources:
+1. Клонируйте репозиторий:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```
+   git clone https://github.com/your-username/perevozka27.git
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Установите зависимости:
 
-## Deploy on Vercel
+   ```
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Запустите сервер разработки:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```
+   npm run dev
+   ```
+
+4. Откройте [http://localhost:3000](http://localhost:3000) в вашем браузере.
+
+## Структура проекта
+
+- `app/`: Основные страницы приложения
+- `components/`: Переиспользуемые React компоненты
+- `public/`: Статические файлы (изображения, иконки)
+- `styles/`: Глобальные стили
+- `lib/`: Вспомогательные функции и утилиты
+
+## Разработка
+
+- `npm run dev`: Запуск сервера разработки
+- `npm run build`: Сборка проекта
+- `npm run start`: Запуск собранного проекта
+- `npm run lint`: Проверка кода линтером
+
+## Деплой
+
+Проект настроен для легкого деплоя на платформе Vercel. Подробнее о деплое Next.js приложений можно узнать в [документации Next.js](https://nextjs.org/docs/app/building-your-application/deploying).
+
+## Лицензия
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+## Контакты
+
+Если у вас есть вопросы или предложения, пожалуйста, свяжитесь с нами по адресу [enjoyhillol@gmail.com](mailto:enjoyhillol@gmail.com).
