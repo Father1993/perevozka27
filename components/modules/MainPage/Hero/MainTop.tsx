@@ -64,7 +64,7 @@ const MainTop = () => {
           },
           {
             icon: faMapMarkedAlt,
-            description: 'Хабаровск и ДФО',
+            description: 'Хабаровск край и ДФО',
           },
         ].map((item, index) => (
           <motion.div

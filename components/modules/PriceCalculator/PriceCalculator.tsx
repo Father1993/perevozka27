@@ -34,7 +34,7 @@ const PriceCalculator = () => {
       <h2 className='text-3xl font-extrabold text-indigo-800 mb-6 text-center'>
         Калькулятор стоимости
       </h2>
-      <div className='space-y-6'>
+      <div id='calculator' className='space-y-6'>
         <div className='relative'>
           <label
             className='block text-indigo-700 mb-2 font-semibold'

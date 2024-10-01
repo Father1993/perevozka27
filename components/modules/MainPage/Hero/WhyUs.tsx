@@ -51,7 +51,7 @@ const WhyUs = () => {
       <h2 className='text-5xl font-bold text-blue-800 mb-12 text-center'>
         Почему выбирают нас?
       </h2>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+      <div id='whyus' className='grid grid-cols-1 md:grid-cols-2 gap-8'>
         {reasons.map((reason, index) => (
           <motion.div
             key={index}

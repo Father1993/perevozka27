@@ -24,7 +24,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => (
       </li>
       <li>
         <Link
-          href='/services'
+          href='/#services'
           className='hover:text-blue-500 transition duration-300'
         >
           Услуги
@@ -32,7 +32,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => (
       </li>
       <li>
         <Link
-          href='/calculator'
+          href='/#calculator'
           className='hover:text-orange-500 transition duration-300'
         >
           Калькулятор цен
@@ -40,10 +40,10 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => (
       </li>
       <li>
         <Link
-          href='/price'
+          href='/#contacts'
           className='hover:text-blue-500 transition duration-300'
         >
-          Прайс
+          Контакты
         </Link>
       </li>
     </ul>
