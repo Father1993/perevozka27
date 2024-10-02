@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 'use client'
 import Logo from '@/components/elements/Logo/Logo'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
@@ -7,7 +8,7 @@ const Header = () => {
   const isMedia768 = useMediaQuery(768)
 
   return (
-    <header className='header'>
+    <header className='header bg-gradient-to-r from-blue-900 to-purple-900'>
       <div className='container mx-auto flex justify-between items-center p-4'>
         <div className='header__logo'>
           <Logo />

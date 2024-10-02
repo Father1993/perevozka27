@@ -19,15 +19,21 @@ const NavMenu = () => {
     <>
       {!isMedia768 ? (
         <nav className='flex space-x-6'>
-          <Link href='/' className='text-white-700 hover:text-blue-500'>
+          <Link
+            href='/'
+            className='text-white-700 hover:text-blue-500 header__nav-menu'
+          >
             Главная
           </Link>
-          <Link href='/about' className='text-white-700 hover:text-blue-500'>
+          <Link
+            href='/#about'
+            className='text-white-700 hover:text-blue-500 header__nav-menu'
+          >
             О нас
           </Link>
           <Link
             href='/#services'
-            className='text-white-700 hover:text-blue-500'
+            className='text-white-700 hover:text-blue-500 header__nav-menu'
           >
             Услуги
           </Link>
@@ -39,7 +45,7 @@ const NavMenu = () => {
           </Link>
           <Link
             href='/#contacts'
-            className='text-white-700 hover:text-blue-500'
+            className='text-white-700 hover:text-blue-500 header__nav-menu'
           >
             Контакты
           </Link>
