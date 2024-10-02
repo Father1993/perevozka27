@@ -20,8 +20,8 @@
 
 body {
   font-weight: 400;
-  background-color: #2b374b;
-  color: #e8e9ea;
+  background-color: hsl(222, 25%, 70%);
+  color: #1f2937;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -106,6 +106,14 @@ body::-webkit-scrollbar-thumb:hover {
 
 .blink {
   animation: blink 1s infinite; /* Мигает каждые 1 секунду */
+}
+
+.service__cards {
+  height: 370px;
+}
+
+.header__nav-menu {
+  color: white;
 }
 
 /* @font-face {

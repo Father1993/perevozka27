@@ -1,5 +1,38 @@
 /* eslint-disable max-len */
 'use client'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Страница не найдена | Perevozka27',
+  description:
+    'К сожалению, запрашиваемая страница не найдена. Вернитесь на главную страницу Perevozka27 для поиска нужной информации о грузоперевозках в Хабаровске.',
+  robots: {
+    index: false,
+    follow: false,
+  },
+  openGraph: {
+    title: '404 - Страница не найдена | Perevozka27',
+    description:
+      'Извините, запрашиваемая страница не существует. Вернитесь на главную Perevozka27 для информации о грузоперевозках в Хабаровске и ДФО. Перевозка 27. Перевозка27',
+    type: 'website',
+    url: 'https://perevozka27.ru/404',
+    images: [
+      {
+        url: '/img/404-og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: '404 - Страница не найдена | Perevozka27',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    title: '404 - Страница не найдена | Perevozka27',
+    description:
+      'Упс! Страница, которую вы ищете, не существует. Вернитесь на главную перевозка27 для информации о наших услугах грузоперевозок.',
+    images: '/img/android-chrome-192x192.png',
+  },
+}
 
 const NotFound = () => (
   <main className='flex-grow flex items-center justify-center bg-grey'>

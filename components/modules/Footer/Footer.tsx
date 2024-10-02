@@ -3,7 +3,7 @@ import { faTelegram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
 
 const Footer = () => (
-  <footer className='bg-gray-900 text-gray-300 py-8'>
+  <footer className='bg-gray-900 text-gray-300 py-8 mt-10'>
     <div className='container mx-auto px-4'>
       <div className='flex flex-wrap justify-between items-center'>
         <div className='w-full md:w-auto mb-4 md:mb-0'>

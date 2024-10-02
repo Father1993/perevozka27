@@ -12,7 +12,7 @@ const Services = () => {
       price: '1 200₽/час',
       description:
         'Наш грузовик с водителем предоставляет надежные и комфортные услуги по перевозке грузов. Мы гарантируем своевременную доставку и безопасность груза.',
-      bgImage: '/img/truck-service.jpg',
+      bgImage: '/img/elf.jpg',
     },
     {
       icon: faTruckFast,
@@ -20,7 +20,7 @@ const Services = () => {
       price: '700₽/час',
       description:
         'Наши грузчики профессионально и быстро выполнят погрузочно-разгрузочные работы. Мы ценим ваше время и гарантируем качественное обслуживание.',
-      bgImage: '/img/loader-service.jpg',
+      bgImage: '/img/gruz.jpg',
     },
   ]
 
@@ -31,7 +31,7 @@ const Services = () => {
       transition={{ duration: 0.8 }}
       className='mb-12'
     >
-      <h2 className='text-4xl font-bold text-blue-800 mb-8 text-center'>
+      <h2 className='text-4xl font-bold text-white-800 mb-8 text-center'>
         Наши услуги
       </h2>
       <div id='services' className='grid grid-cols-1 md:grid-cols-2 gap-8'>
@@ -42,7 +42,7 @@ const Services = () => {
               scale: 1.05,
               boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
             }}
-            className='relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300'
+            className='relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 service__cards'
             style={{
               backgroundImage: `url(${service.bgImage})`,
               backgroundSize: 'cover',
@@ -59,7 +59,7 @@ const Services = () => {
                       className='text-2xl text-white'
                     />
                   </div>
-                  <h3 className='font-bold text-2xl text-white'>
+                  <h3 className='font-bold text-3xl text-white'>
                     {service.title}
                   </h3>
                 </div>
@@ -73,6 +73,30 @@ const Services = () => {
             </div>
           </motion.div>
         ))}
+      </div>
+      <div className='mt-12 bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-2xl p-8 shadow-xl'>
+        <h3 className='text-3xl font-bold text-white mb-6 text-center'>
+          Средняя цена перевозки по тарифу межгород
+        </h3>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+          {[
+            { route: 'Хабаровск - Владивосток', price: '55 000₽' },
+            { route: 'Хабаровск - Комсомольск на Амуре', price: '40 000₽' },
+            { route: 'Хабаровск - Благовещенск', price: '40 000₽' },
+            { route: 'Хабаровск - Биробиджан', price: '20 000₽' },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className='bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl p-4 flex justify-between items-center transition-all duration-300 hover:shadow-lg hover:scale-105'
+            >
+              <span className='text-white font-semibold'>{item.route}</span>
+              <span className='text-yellow-300 font-bold'>{item.price}</span>
+            </div>
+          ))}
+        </div>
+        <p className='text-white text-center text-sm italic mt-4'>
+          * Обратите внимание: цены обсуждаются индивидуально с каждым клиентом
+        </p>
       </div>
     </motion.div>
   )

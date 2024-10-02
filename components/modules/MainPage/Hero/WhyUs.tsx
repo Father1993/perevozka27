@@ -13,31 +13,31 @@ const WhyUs = () => {
   const reasons = [
     {
       icon: faMapMarkedAlt,
-      title: 'Хабаровск + Край',
+      title: 'Хабаровск + ДФО',
       description:
         'Осуществляем грузоперевозки по городу Хабаровск и ближайшим регионам на грузовике Isuzu Elf. Грузоподъемность: 3 тонны. Объем: 16м².',
-      bgImage: '/img/1.jpeg',
+      bgImage: '/img/2.jpg',
     },
     {
       icon: faHistory,
       title: 'Большой опыт работы',
       description:
         'Более 15 лет опыта. Доставляем грузы по всему краю с 2008 года.',
-      bgImage: '/img/2.jpeg',
+      bgImage: '/img/1.jpg',
     },
     {
       icon: faTruckFast,
       title: 'Качественная доставка',
       description:
         'Наш водитель - профессионал своего дела. Всегда вовремя заберёт груз и доставит точно в срок.',
-      bgImage: '/img/3.jpeg',
+      bgImage: '/img/dostavka.jpg',
     },
     {
       icon: faAward,
       title: 'Преимущества',
       description:
-        'Лучшая цена грузоперевозок в регионе! Перевозки по Хабаровску и ASлижайшим районам края.',
-      bgImage: '/img/4.jpeg',
+        'Лучшая цена грузоперевозок в регионе! Перевозки по Хабаровску и ближайшим районам края.',
+      bgImage: '/img/preimushestvo.jpg',
     },
   ]
 
@@ -48,7 +48,7 @@ const WhyUs = () => {
       transition={{ duration: 0.8 }}
       className='p-8 rounded-2xl shadow-xl mb-12'
     >
-      <h2 className='text-5xl font-bold text-blue-800 mb-12 text-center'>
+      <h2 className='text-5xl font-bold text-white-800 mb-12 text-center'>
         Почему выбирают нас?
       </h2>
       <div id='whyus' className='grid grid-cols-1 md:grid-cols-2 gap-8'>

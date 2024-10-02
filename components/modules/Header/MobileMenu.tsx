@@ -10,14 +10,17 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => (
         &times;
       </button>
       <li>
-        <Link href='/' className='hover:text-blue-500 transition duration-300'>
+        <Link
+          href='/'
+          className='hover:text-blue-500 transition duration-300 header__nav-menu'
+        >
           Главная
         </Link>
       </li>
       <li>
         <Link
-          href='/about'
-          className='hover:text-blue-500 transition duration-300'
+          href='/#about'
+          className='hover:text-white-500 transition duration-300 header__nav-menu'
         >
           О нас
         </Link>
@@ -25,7 +28,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => (
       <li>
         <Link
           href='/#services'
-          className='hover:text-blue-500 transition duration-300'
+          className='hover:text-white-500 transition duration-300 header__nav-menu'
         >
           Услуги
         </Link>
@@ -33,7 +36,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => (
       <li>
         <Link
           href='/#calculator'
-          className='hover:text-orange-500 transition duration-300'
+          className='hover:text-white-500 transition duration-300 header__nav-menu'
         >
           Калькулятор цен
         </Link>
@@ -41,7 +44,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => (
       <li>
         <Link
           href='/#contacts'
-          className='hover:text-blue-500 transition duration-300'
+          className='hover:text-white-500 transition duration-300 header__nav-menu'
         >
           Контакты
         </Link>
