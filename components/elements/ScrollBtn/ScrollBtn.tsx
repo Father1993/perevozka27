@@ -1,3 +1,4 @@
+/* eslint-disable react/self-closing-comp */
 /* eslint-disable max-len */
 import { useEffect, useState } from 'react'
 import { faArrowUp, faPhone } from '@fortawesome/free-solid-svg-icons' // Импортируем иконку "вверх"
@@ -39,11 +40,22 @@ const ScrollBtn = () => {
         <FontAwesomeIcon icon={faArrowUp} size='3x' color='grey' />
       </button>
       <Link
-        href='+79141500852'
-        className={`fixed bottom-4 right-20 text-white p-3 rounded-full shadow-lg transition-opacity duration-300 ${isVisible ? 'opacity-100 blink' : 'opacity-0 pointer-events-none'}`}
-        style={{ display: isVisible ? 'block' : 'none' }}
+        href='tel:+79141500852'
+        className={`fixed bottom-4 right-20 z-50 transition-all duration-300 ease-in-out transform hover:scale-110 ${
+          isVisible
+            ? 'opacity-100 translate-y-0'
+            : 'opacity-0 translate-y-10 pointer-events-none'
+        }`}
       >
-        <FontAwesomeIcon icon={faPhone} size='3x' color='green' />
+        <div className='relative group'>
+          <div className='absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt'></div>
+          <button className='relative flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-green-400 to-blue-500 text-white shadow-lg'>
+            <FontAwesomeIcon icon={faPhone} size='lg' />
+          </button>
+        </div>
+        <span className='absolute top-0 right-0 px-2 py-1 text-xs font-bold text-white bg-red-500 rounded-full animate-pulse'>
+          Позвонить
+        </span>
       </Link>
     </>
   )
