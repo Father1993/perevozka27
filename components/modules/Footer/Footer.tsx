@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTelegram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
@@ -11,20 +12,20 @@ const Footer = () => (
             &copy; {new Date().getFullYear()} Perevozka27. Все права защищены.
           </p>
         </div>
-        <div className='w-full md:w-auto mb-4 md:mb-0'>
-          <div className='flex justify-center md:justify-end space-x-4'>
+        <div className='w-full md:w-auto mb-4 md:mb-0 md:mr-40'>
+          <div className='flex flex-col items-center md:items-center md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4'>
             <a
               href='tel:+79622285219'
               className='hover:text-white transition-colors flex items-center'
             >
-              <FontAwesomeIcon icon={faPhone} className='mr-2' />
+              <FontAwesomeIcon icon={faPhone} className='mr-2' size='2x' />
               <span className='text-sm'>+7 (962) 228-52-19</span>
             </a>
             <a
               href='mailto:perevozka27@gmail.com'
               className='hover:text-white transition-colors flex items-center'
             >
-              <FontAwesomeIcon icon={faEnvelope} className='mr-2' />
+              <FontAwesomeIcon icon={faEnvelope} className='mr-2' size='2x' />
               <span className='text-sm'>perevozka27@gmail.com</span>
             </a>
           </div>

@@ -75,7 +75,7 @@ const Services = () => {
         ))}
       </div>
       <div className='mt-12 bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-2xl p-8 shadow-xl'>
-        <h3 className='text-3xl font-bold text-white mb-6 text-center'>
+        <h3 className='text-3xl font-bold text-black mb-6 text-center'>
           Средняя цена перевозки по тарифу межгород
         </h3>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
@@ -94,7 +94,7 @@ const Services = () => {
             </div>
           ))}
         </div>
-        <p className='text-white text-center text-sm italic mt-4'>
+        <p className='text-black text-center text-md italic mt-4'>
           * Обратите внимание: цены обсуждаются индивидуально с каждым клиентом
         </p>
       </div>

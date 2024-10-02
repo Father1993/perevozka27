@@ -20,12 +20,22 @@
 
 body {
   font-weight: 400;
-  background-color: hsl(222, 25%, 70%);
   color: #1f2937;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
+
+  /* Добавляем градиентный фон */
+  background: linear-gradient(
+    135deg,
+    #dfd4ff 0%,
+    #ffffff 25%,
+    #9bafff 50%,
+    #c0c6d8 75%,
+    #a046b9 100%
+  );
+  background-attachment: fixed; /* Фиксируем фон, чтобы он не прокручивался */
 }
 
 body::-webkit-scrollbar {

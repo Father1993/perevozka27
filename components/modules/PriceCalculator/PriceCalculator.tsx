@@ -7,21 +7,35 @@ import {
   faClock,
   faCalculator,
   faPerson,
+  faRoad,
 } from '@fortawesome/free-solid-svg-icons'
 
 const PriceCalculator = () => {
   const [hours, setHours] = useState<string>('2')
   const [totalPrice, setTotalPrice] = useState<number>(0)
   const [needLoader, setNeedLoader] = useState<boolean>(false)
+  const [transportType, setTransportType] = useState<'city' | 'intercity'>(
+    'city'
+  )
+  const [distance, setDistance] = useState<string>('100')
+
+  const basePrice = 1200 // Базовая цена за час для городских перевозок
+  const intercityRate = 61 // Цена за км для междугородних перевозок
+  const loaderPrice = 700 // Цена за час работы грузчика
 
   const calculatePrice = () => {
-    const basePrice = 1200
-    const loaderPrice = 700
     const minHours = 2
-    const inputHours = Math.max(Number(hours), minHours)
-    const price = Math.ceil(inputHours * basePrice)
-    const totalPrice = needLoader ? price + inputHours * loaderPrice : price
-    setTotalPrice(totalPrice)
+
+    if (transportType === 'city') {
+      const inputHours = Math.max(Number(hours), minHours)
+      const price = Math.ceil(inputHours * basePrice)
+      const totalPrice = needLoader ? price + inputHours * loaderPrice : price
+      setTotalPrice(totalPrice)
+    } else {
+      const distanceNum = Math.max(Number(distance), 100) // Минимальное расстояние 100 км
+      const price = Math.ceil(distanceNum * intercityRate)
+      setTotalPrice(price)
+    }
   }
 
   return (
@@ -35,44 +49,98 @@ const PriceCalculator = () => {
         Калькулятор стоимости
       </h2>
       <div id='calculator' className='space-y-6'>
-        <div className='relative'>
-          <label
-            className='block text-indigo-700 mb-2 font-semibold'
-            htmlFor='hours'
+        <div className='flex justify-between'>
+          <button
+            onClick={() => setTransportType('city')}
+            className={`px-4 py-2 rounded-lg ${
+              transportType === 'city'
+                ? 'bg-indigo-600 text-white'
+                : 'bg-gray-200 text-gray-700'
+            }`}
           >
-            <FontAwesomeIcon icon={faClock} className='mr-2' />
-            Время работы (часы)
-          </label>
-          <input
-            type='number'
-            id='hours'
-            value={hours}
-            onChange={(e) => setHours(e.target.value)}
-            min='2'
-            className='w-full p-3 border-2 border-indigo-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-indigo-800 text-lg transition duration-200 ease-in-out'
-          />
-          <span className='absolute right-10 top-[2.7rem] text-indigo-400 text-sm'>
-            мин. 2 часа
-          </span>
+            По городу
+          </button>
+          <button
+            onClick={() => setTransportType('intercity')}
+            className={`px-4 py-2 rounded-lg ${
+              transportType === 'intercity'
+                ? 'bg-indigo-600 text-white'
+                : 'bg-gray-200 text-gray-700'
+            }`}
+          >
+            Межгород
+          </button>
         </div>
 
-        <div className='flex items-center'>
-          <input
-            type='checkbox'
-            id='needLoader'
-            checked={needLoader}
-            onChange={(e) => setNeedLoader(e.target.checked)}
-            className='w-5 h-5 text-indigo-600 border-indigo-300 rounded focus:ring-indigo-500'
-          />
-          <label
-            htmlFor='needLoader'
-            className='ml-2 text-indigo-700 font-semibold'
-          >
-            <FontAwesomeIcon icon={faPerson} className='mr-2' />
-            Услуги грузчика (+700₽/ч)
-          </label>
-        </div>
+        {transportType === 'city' ? (
+          <>
+            <div className='relative'>
+              <label
+                className='block text-indigo-700 mb-2 font-semibold'
+                htmlFor='hours'
+              >
+                <FontAwesomeIcon icon={faClock} className='mr-2' />
+                Время работы (часы)
+              </label>
+              <input
+                type='number'
+                id='hours'
+                value={hours}
+                onChange={(e) => setHours(e.target.value)}
+                min='2'
+                className='w-full p-3 border-2 border-indigo-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-indigo-800 text-lg transition duration-200 ease-in-out'
+              />
+              <span className='absolute right-10 top-[2.7rem] text-indigo-400 text-sm'>
+                мин. 2 часа
+              </span>
+            </div>
 
+            <div className='flex items-center'>
+              <input
+                type='checkbox'
+                id='needLoader'
+                checked={needLoader}
+                onChange={(e) => setNeedLoader(e.target.checked)}
+                className='w-5 h-5 text-indigo-600 border-indigo-300 rounded focus:ring-indigo-500'
+              />
+              <label
+                htmlFor='needLoader'
+                className='ml-2 text-indigo-700 font-semibold'
+              >
+                <FontAwesomeIcon icon={faPerson} className='mr-2' />
+                Услуги грузчика (+700₽/ч)
+              </label>
+            </div>
+          </>
+        ) : (
+          <div className='relative'>
+            <label
+              className='block text-indigo-700 mb-2 font-semibold'
+              htmlFor='distance'
+            >
+              <FontAwesomeIcon icon={faRoad} className='mr-2' />
+              Расстояние (км)
+            </label>
+            <input
+              type='number'
+              id='distance'
+              value={distance}
+              onChange={(e) => setDistance(e.target.value)}
+              min='100'
+              className='w-full p-3 border-2 border-indigo-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-indigo-800 text-lg transition duration-200 ease-in-out'
+            />
+            <span className='absolute right-10 top-[2.7rem] text-indigo-400 text-sm'>
+              мин. 100 км
+            </span>
+          </div>
+        )}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          *ЦЕНА БЕЗ УЧЕТА УСЛУГ ГРУЗЧИКОВ
+        </motion.p>
         <motion.button
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.98 }}
