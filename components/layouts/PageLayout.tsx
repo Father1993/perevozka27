@@ -5,6 +5,7 @@ import { Toaster } from 'react-hot-toast'
 import { motion } from 'framer-motion'
 import Layout from './Layout'
 import CookieAlert from '../modules/CookieAlert/CookieAlert'
+import Header from '../modules/Header/Header'
 
 const PagesLayout = ({ children }: { children: React.ReactNode }) => {
   const [cookieAlertOpen, setCookieAlertOpen] = useState(false)
@@ -20,7 +21,10 @@ const PagesLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang='ru'>
       <body>
         <Next13ProgressBar height='4px' color='#9466FF' showOnShallow />
-        <Layout>{children}</Layout>
+        <Header /> {/* Добавьте Header компонент здесь */}
+        <main className='pt-40'>
+          <Layout>{children}</Layout>
+        </main>
         {cookieAlertOpen && (
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}

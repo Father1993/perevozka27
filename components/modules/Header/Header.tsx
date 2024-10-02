@@ -1,36 +1,75 @@
+/* eslint-disable indent */
 /* eslint-disable max-len */
 'use client'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPhone } from '@fortawesome/free-solid-svg-icons'
-import Link from 'next/link'
-import NavMenu from './NavMenu'
+import { useEffect, useState } from 'react'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import Logo from '@/components/elements/Logo/Logo'
+import MobileMenu from './MobileMenu'
+import ClientOnlyNavigation from './ClientOnlyNavigation'
+import ClientOnlyCallButton from './ClientOnlyCallButton'
 
 const Header = () => {
   const isMedia768 = useMediaQuery(768)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  const handleMobileMenuToggle = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
 
   return (
-    <header className='header bg-gradient-to-r from-blue-900 to-purple-900'>
-      <div className='container mx-auto flex justify-between items-center p-4'>
-        <div className='header__logo'>
-          <Logo />
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out
+          ${
+            isScrolled
+              ? 'bg-gradient-to-r from-blue-900/50 to-purple-900/50 backdrop-blur-xs m-4 rounded-full shadow-lg border border-white/10'
+              : 'bg-gradient-to-r from-blue-900 to-purple-900'
+          }
+          ${isScrolled ? 'py-2' : 'py-0'}
+        `}
+      >
+        <div
+          className={`container mx-auto flex justify-between items-center p-4 transition-all duration-500 ease-in-out
+          ${isScrolled ? 'max-w-7xl' : 'max-w-full'}
+        `}
+        >
+          <div className='header__logo'>
+            <Logo isScrolled={isScrolled} />
+          </div>
+
+          <ClientOnlyNavigation />
+
+          {isMedia768 && (
+            <button
+              className={`btn-reset burger-menu ${isScrolled ? 'scale-90' : 'scale-100'}`}
+              onClick={handleMobileMenuToggle}
+            />
+          )}
+
+          <ClientOnlyCallButton isScrolled={isScrolled} />
         </div>
-
-        <NavMenu />
-
-        {!isMedia768 && (
-          <Link
-            href='tel:+79622285219'
-            className='inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200 ease-in-out'
-          >
-            <FontAwesomeIcon icon={faPhone} className='mr-2' />
-            <span className='hidden sm:inline'>Позвонить</span>
-            <span className='sm:hidden'>+7 914 150-08-52</span>
-          </Link>
-        )}
-      </div>
-    </header>
+      </header>
+      {isMobileMenuOpen && (
+        <MobileMenu onClose={handleMobileMenuToggle} isScrolled={isScrolled} />
+      )}
+    </>
   )
 }
 

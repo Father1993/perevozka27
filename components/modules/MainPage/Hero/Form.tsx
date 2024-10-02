@@ -33,7 +33,7 @@ const Form = () => {
     >
       <div className='absolute top-0 left-0 w-full h-full bg-white opacity-10 transform -skew-y-6'></div>
       <div className='relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12'>
-        <div className='text-white p-4'>
+        <div id='contacts' className='text-white p-4'>
           <h2 className='text-3xl font-bold mb-6'>Свяжитесь с нами</h2>
           <div id='' className='space-y-4'>
             {contactInfo.map((item, index) => (

@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backdropBlur: {
+        xs: '2px',
+      },
       animation: {
         tilt: 'tilt 10s infinite linear',
       },

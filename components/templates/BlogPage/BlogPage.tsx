@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendar, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 const BlogPage: React.FC<BlogPageProps> = ({ posts }) => (
-  <main className='bg-gray-50 min-h-screen py-12'>
+  <main className='min-h-screen py-12'>
     <section className='container mx-auto px-4 sm:px-6 lg:px-8'>
       <h1 className='text-4xl font-bold text-gray-900 mb-8 text-center'>
         Наш блог

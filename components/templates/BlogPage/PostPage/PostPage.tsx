@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { PostPageProps } from '@/types/posts'
 
 const PostPage: React.FC<PostPageProps> = ({ post }) => (
-  <main className='bg-gray-50 min-h-screen py-12'>
+  <main className='min-h-screen py-12'>
     <article className='container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl'>
       <header className='mb-8'>
         <h1 className='text-4xl sm:text-5xl font-bold text-gray-900 mb-4'>
