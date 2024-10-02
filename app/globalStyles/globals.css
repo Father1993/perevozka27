@@ -102,6 +102,8 @@ body::-webkit-scrollbar-thumb:hover {
   background-repeat: no-repeat;
   border: none;
   cursor: pointer;
+  margin-right: 17px;
+  margin-top: 10px;
 }
 
 @keyframes blink {
@@ -124,6 +126,15 @@ body::-webkit-scrollbar-thumb:hover {
 
 .header__nav-menu {
   color: white;
+}
+
+.content {
+  padding-top: 120px; /* Adjust this value based on your header height */
+  transition: padding-top 0.7s ease-in-out;
+}
+
+.scrolled .content {
+  padding-top: 80px; /* Adjust this value for when header is smaller */
 }
 
 /* @font-face {
