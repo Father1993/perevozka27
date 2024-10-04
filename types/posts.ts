@@ -11,6 +11,7 @@ export interface PostItem {
   date?: string
   content?: string
   description?: string
+  image?: string
 }
 
 export interface BlogPageProps {
