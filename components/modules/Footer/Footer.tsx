@@ -28,20 +28,20 @@ const Footer = () => (
           <div className='flex justify-center space-x-4'>
             <a
               href='https://t.me/perevozka27'
-              className='text-xl hover:text-white transition-colors'
+              className='text-base md:text-xl hover:text-white transition-colors'
               aria-label='Telegram'
             >
               <FontAwesomeIcon icon={faPhone} className='mr-2' />
-              <span className='text-sm'>+7 (962) 228-52-19</span>
+              <span className='text-xs md:text-sm'>+7 (962) 228-52-19</span>
             </a>
             <a
               href='https://wa.me/+79622285219'
-              className='text-xl hover:text-white transition-colors'
+              className='text-base md:text-xl hover:text-white transition-colors'
               aria-label='WhatsApp'
             >
               <FontAwesomeIcon icon={faEnvelope} className='mr-2' />
 
-              <span className='text-sm'>perevozka27@gmail.com</span>
+              <span className='text-xs md:text-sm'>perevozka27@gmail.com</span>
             </a>
           </div>
         </div>

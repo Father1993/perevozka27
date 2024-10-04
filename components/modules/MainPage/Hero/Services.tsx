@@ -81,9 +81,9 @@ const Services = () => {
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
           {[
             { route: 'Хабаровск - Владивосток', price: '55 000₽' },
-            { route: 'Хабаровск - Комсомольск на Амуре', price: '40 000₽' },
-            { route: 'Хабаровск - Благовещенск', price: '40 000₽' },
-            { route: 'Хабаровск - Биробиджан', price: '20 000₽' },
+            { route: 'Хабаровск - Комсомольск-на-Амуре', price: '40 000₽' },
+            { route: 'Хабаровск - Благовещенск', price: '55 000₽' },
+            { route: 'Хабаровск - Биробиджан', price: '30 000₽' },
           ].map((item, index) => (
             <div
               key={index}
