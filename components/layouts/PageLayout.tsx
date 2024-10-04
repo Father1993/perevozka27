@@ -20,8 +20,9 @@ const PagesLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang='ru'>
       <body>
+        <Toaster position='top-right' />
         <Next13ProgressBar height='4px' color='#9466FF' showOnShallow />
-        <Header /> {/* Добавьте Header компонент здесь */}
+        <Header />
         <main className='pt-40'>
           <Layout>{children}</Layout>
         </main>
