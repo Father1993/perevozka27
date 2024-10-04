@@ -15,43 +15,41 @@ const BlogPage: React.FC<BlogPageProps> = ({ posts }) => (
         {posts.map((post) => (
           <article
             key={post.slug}
-            className='relative bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl'
+            className='bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl'
           >
-            <div className='absolute inset-0 z-0'>
+            <div className='relative h-64 md:h-96'>
               <Image
-                src={post.image || '/images/default-post-image.jpg'}
+                src={post.image as string} // Убедитесь, что у вас есть изображение по умолчанию
                 alt={post.title}
                 layout='fill'
                 objectFit='cover'
-                className='opacity-30'
+                className='transition-transform duration-300 hover:scale-105'
               />
-            </div>
-            <div className='relative z-10 p-6'>
-              <h2 className='text-xl font-semibold text-gray-800 mb-2 line-clamp-2 hover:text-blue-600'>
-                <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-              </h2>
-              {post.date && (
-                <p className='text-sm text-gray-600 mb-4 flex items-center'>
-                  <FontAwesomeIcon icon={faCalendar} className='mr-2' />
-                  {new Date(post.date).toLocaleDateString('ru-RU', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                  })}
-                </p>
-              )}
-              {post.description && (
-                <p className='text-gray-600 mb-4 line-clamp-3'>
-                  {post.description}
-                </p>
-              )}
-              <Link
-                href={`/blog/${post.slug}`}
-                className='inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-300'
-              >
-                Читать далее
-                <FontAwesomeIcon icon={faArrowRight} className='ml-2' />
-              </Link>
+              <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent' />
+              <div className='absolute bottom-0 left-0 p-6 text-white'>
+                <h2 className='text-2xl md:text-3xl font-bold mb-2'>
+                  <Link href={`/blog/${post.slug}`} className='hover:underline'>
+                    {post.title}
+                  </Link>
+                </h2>
+                {post.date && (
+                  <p className='text-sm mb-4 flex items-center'>
+                    <FontAwesomeIcon icon={faCalendar} className='mr-2' />
+                    {new Date(post.date).toLocaleDateString('ru-RU', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </p>
+                )}
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className='inline-flex items-center text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-full transition-colors duration-300'
+                >
+                  Читать далее
+                  <FontAwesomeIcon icon={faArrowRight} className='ml-2' />
+                </Link>
+              </div>
             </div>
           </article>
         ))}

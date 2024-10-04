@@ -3,6 +3,7 @@ export interface Post {
   title: string
   date?: string
   content?: string
+  image?: string
 }
 
 export interface PostItem {
