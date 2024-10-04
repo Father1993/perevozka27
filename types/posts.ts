@@ -3,6 +3,7 @@ export interface Post {
   title: string
   date?: string
   content?: string
+  image?: string
 }
 
 export interface PostItem {
@@ -11,6 +12,7 @@ export interface PostItem {
   date?: string
   content?: string
   description?: string
+  image?: string
 }
 
 export interface BlogPageProps {

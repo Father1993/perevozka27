@@ -137,6 +137,36 @@ body::-webkit-scrollbar-thumb:hover {
   padding-top: 80px; /* Adjust this value for when header is smaller */
 }
 
+.post-image-container {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.post-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 70%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image-caption {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #666;
+}
+
+.post__title {
+  font-size: 2rem;
+}
+
+@media (max-width: 900px) {
+  .post-image {
+    max-width: 100%;
+  }
+}
+
 /* @font-face {
   font-display: swap;
   font-family: Rostelecom Basis;

@@ -25,6 +25,11 @@ export async function getPostBySlug(slug: string, fields: string[] = []) {
 
   const items: Items = {}
 
+  // Убедимся, что 'image' всегда включено в fields
+  if (!fields.includes('image')) {
+    fields.push('image')
+  }
+
   fields.forEach((field) => {
     if (field === 'slug') {
       items[field] = slug
@@ -51,6 +56,7 @@ export function getPostData(slug: string) {
     date: data.date,
     description: data.description,
     content,
+    image: data.image,
   }
 }
 

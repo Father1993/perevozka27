@@ -20,8 +20,9 @@ const PriceCalculator = () => {
   const [distance, setDistance] = useState<string>('100')
 
   const basePrice = 1200 // Базовая цена за час для городских перевозок
-  const intercityRate = 61 // Цена за км для междугородних перевозок
   const loaderPrice = 700 // Цена за час работы грузчика
+  const minDistance = 100 // Минимальное расстояние
+  const maxDistance = 5000 // Максимальное расстояние
 
   const calculatePrice = () => {
     const minHours = 2
@@ -32,8 +33,24 @@ const PriceCalculator = () => {
       const totalPrice = needLoader ? price + inputHours * loaderPrice : price
       setTotalPrice(totalPrice)
     } else {
-      const distanceNum = Math.max(Number(distance), 100) // Минимальное расстояние 100 км
-      const price = Math.ceil(distanceNum * intercityRate)
+      const distanceNum = Math.max(
+        Math.min(Number(distance), maxDistance),
+        minDistance
+      )
+      let pricePerKm
+
+      // Тарифная сетка
+      if (distanceNum <= 200) {
+        pricePerKm = 150
+      } else if (distanceNum <= 400) {
+        pricePerKm = 110
+      } else if (distanceNum <= 500) {
+        pricePerKm = 95
+      } else {
+        pricePerKm = 80
+      }
+
+      const price = Math.round(distanceNum * pricePerKm)
       setTotalPrice(price)
     }
   }
@@ -134,13 +151,15 @@ const PriceCalculator = () => {
             </span>
           </div>
         )}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
-          *ЦЕНА БЕЗ УЧЕТА УСЛУГ ГРУЗЧИКОВ
-        </motion.p>
+        {transportType === 'intercity' && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            *ЦЕНА БЕЗ УЧЕТА УСЛУГ ГРУЗЧИКОВ
+          </motion.p>
+        )}
         <motion.button
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.98 }}

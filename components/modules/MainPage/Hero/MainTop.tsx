@@ -1,12 +1,7 @@
 /* eslint-disable max-len */
 import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faTruck,
-  faBoxOpen,
-  faClock,
-  faMapMarkedAlt,
-} from '@fortawesome/free-solid-svg-icons'
+import { mainServices } from '@/constants/all'
 
 const MainTop = () => {
   const handleUseCalculate = () => {
@@ -49,27 +44,7 @@ const MainTop = () => {
         id='about'
         className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'
       >
-        {[
-          {
-            icon: faTruck,
-            title: 'Надежный транспорт',
-            description: 'Грузовик Isuzu Elf',
-          },
-          {
-            icon: faBoxOpen,
-            title: 'Вместимость',
-            description: 'До 3 тонны, 16м²',
-          },
-          {
-            icon: faClock,
-            title: 'Точность доставки',
-            description: 'Всегда вовремя',
-          },
-          {
-            icon: faMapMarkedAlt,
-            description: 'Хабаровск край и ДФО',
-          },
-        ].map((item, index) => (
+        {mainServices.map((item, index) => (
           <motion.div
             key={index}
             whileHover={{
