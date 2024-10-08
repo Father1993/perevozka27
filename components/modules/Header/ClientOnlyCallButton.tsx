@@ -20,14 +20,14 @@ const ClientOnlyCallButton = ({ isScrolled }: { isScrolled: boolean }) => {
 
   return (
     <Link
-      href='tel:+79141500852'
+      href='tel:+79622285219'
       className={`inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-500 ease-in-out
         ${isScrolled ? 'scale-90' : 'scale-100'}
       `}
     >
       <FontAwesomeIcon icon={faPhone} className='mr-2' />
       <span className='hidden sm:inline'>Позвонить</span>
-      <span className='sm:hidden'>+7 914 150-08-52</span>
+      <span className='sm:hidden'>+7 962 228-52-19</span>
     </Link>
   )
 }
