@@ -37,20 +37,26 @@ const PriceCalculator = () => {
         Math.min(Number(distance), maxDistance),
         minDistance
       )
-      let pricePerKm
+      let price
 
-      // Тарифная сетка
-      if (distanceNum <= 200) {
-        pricePerKm = 150
-      } else if (distanceNum <= 400) {
-        pricePerKm = 110
-      } else if (distanceNum <= 500) {
-        pricePerKm = 95
+      // Новая логика расчета цены для межгородских перевозок
+      if (distanceNum === 100) {
+        price = 15000
+      } else if (distanceNum > 100 && distanceNum <= 300) {
+        price = Math.round(distanceNum * 100)
       } else {
-        pricePerKm = 80
+        // Существующая логика для расстояний более 300 км
+        let pricePerKm
+        if (distanceNum <= 400) {
+          pricePerKm = 110
+        } else if (distanceNum <= 500) {
+          pricePerKm = 95
+        } else {
+          pricePerKm = 80
+        }
+        price = Math.round(distanceNum * pricePerKm)
       }
 
-      const price = Math.round(distanceNum * pricePerKm)
       setTotalPrice(price)
     }
   }

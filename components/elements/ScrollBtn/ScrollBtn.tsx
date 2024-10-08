@@ -40,7 +40,7 @@ const ScrollBtn = () => {
         <FontAwesomeIcon icon={faArrowUp} size='3x' color='grey' />
       </button>
       <Link
-        href='tel:+79141500852'
+        href='tel:+79622285219'
         className={`fixed bottom-4 right-20 z-50 transition-all duration-300 ease-in-out transform hover:scale-110 ${
           isVisible
             ? 'opacity-100 translate-y-0'

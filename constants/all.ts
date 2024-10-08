@@ -72,7 +72,7 @@ export const roadRoutes = [
   { route: 'Хабаровск - Владивосток', price: '55 000₽' },
   { route: 'Хабаровск - Комсомольск-на-Амуре', price: '40 000₽' },
   { route: 'Хабаровск - Благовещенск', price: '55 000₽' },
-  { route: 'Хабаровск - Биробиджан', price: '30 000₽' },
+  { route: 'Хабаровск - Биробиджан', price: '20 000₽' },
 ]
 
 export const mainServices = [
