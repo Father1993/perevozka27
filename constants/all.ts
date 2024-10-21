@@ -105,5 +105,5 @@ export const contactInfo = [
     href: 'mailto:perevozka27@gmail.com',
   },
   { icon: faMapMarkerAlt, text: 'г. Хабаровск', href: '#' },
-  { icon: faClock, text: 'Работаем с 8:00 - 20:00', href: '#' },
+  { icon: faClock, text: 'Работаем с 8:00 - 20:00, Без выходных', href: '#' },
 ]
