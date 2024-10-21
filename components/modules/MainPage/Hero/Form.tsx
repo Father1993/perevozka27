@@ -1,5 +1,6 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable max-len */
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import emailjs from '@emailjs/browser'
@@ -7,7 +8,6 @@ import toast from 'react-hot-toast'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faMobileAlt } from '@fortawesome/free-solid-svg-icons'
 import { contactInfo } from '@/constants/all'
-import { useState } from 'react'
 
 const Form = () => {
   const [name, setName] = useState('')
