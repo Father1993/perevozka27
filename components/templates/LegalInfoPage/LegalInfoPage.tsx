@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 'use client'
 
 import Link from 'next/link'
@@ -11,6 +12,7 @@ import {
   faRobot,
   faCookieBite,
 } from '@fortawesome/free-solid-svg-icons'
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 
 const LegalCard = ({
   title,
@@ -21,7 +23,7 @@ const LegalCard = ({
   title: string
   description: string
   link: string
-  icon: any
+  icon: IconDefinition
 }) => (
   <div className='bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 flex flex-col h-full'>
     <div className='flex items-center mb-4'>
@@ -101,20 +103,30 @@ const LegalInfoPage = () => {
         </h1>
         <p className='text-gray-600 text-center mb-12 max-w-3xl mx-auto'>
           На этой странице собраны все юридические документы компании ООО
-          "Перевозка27", регулирующие использование сайта и обработку данных
-          пользователей в соответствии с законодательством Российской Федерации.
+          &quot;Перевозка27&quot;, регулирующие использование сайта и обработку
+          данных пользователей в соответствии с законодательством Российской
+          Федерации.
         </p>
 
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
-          {legalDocs.map((doc, index) => (
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8'>
+          {legalDocs.map((doc) => (
             <LegalCard
-              key={index}
+              key={doc.title}
               title={doc.title}
               description={doc.description}
               link={doc.link}
               icon={doc.icon}
             />
           ))}
+        </div>
+        <div className='mt-12 p-6 bg-blue-50 rounded-lg'>
+          <h2 className='text-xl font-semibold text-gray-800 mb-4'>
+            О компании
+          </h2>
+          <p className='text-gray-700'>
+            ООО &quot;Перевозка27&quot; - надежный партнер для грузоперевозок по
+            Хабаровскому краю и Дальнему Востоку.
+          </p>
         </div>
       </section>
     </main>
