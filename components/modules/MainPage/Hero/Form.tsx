@@ -12,9 +12,17 @@ import { contactInfo } from '@/constants/all'
 const Form = () => {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
+  const [agreeToTerms, setAgreeToTerms] = useState(false)
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
+    if (!agreeToTerms) {
+      toast.error(
+        'Необходимо согласиться с политикой обработки персональных данных'
+      )
+      return
+    }
 
     emailjs
       .send(
@@ -104,6 +112,30 @@ const Form = () => {
                 required
                 onChange={(e) => setPhone(e.target.value)}
               />
+            </div>
+            <div className='mb-6'>
+              <div className='flex items-center'>
+                <input
+                  id='agree-terms'
+                  type='checkbox'
+                  className='w-4 h-4 text-blue-600 bg-white bg-opacity-20 border-white border-opacity-30 rounded focus:ring-blue-500'
+                  checked={agreeToTerms}
+                  onChange={(e) => setAgreeToTerms(e.target.checked)}
+                  required
+                />
+                <label
+                  htmlFor='agree-terms'
+                  className='ml-2 text-sm text-white'
+                >
+                  Я согласен с{' '}
+                  <Link
+                    href='/data-processing-agreement'
+                    className='underline hover:text-yellow-300'
+                  >
+                    политикой обработки персональных данных
+                  </Link>
+                </label>
+              </div>
             </div>
             <motion.button
               whileHover={{ scale: 1.05 }}

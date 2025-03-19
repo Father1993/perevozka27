@@ -2,6 +2,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTelegram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
+import Creator from './Creator'
 
 const Footer = () => (
   <footer className='bg-gray-900 text-gray-300 py-8 mt-10'>
@@ -50,20 +51,17 @@ const Footer = () => (
           <p className='text-sm'>
             &copy; {new Date().getFullYear()} Perevozka27. Все права защищены.
           </p>
+          <div className='mt-6 border-t border-gray-700 pt-2 pb-2'>
+            <div className='text-center text-xs text-gray-400'>
+              <a href='/legal' className='hover:text-white transition-colors'>
+                Юридическая информация
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className='mt-5 pt-2 border-t border-gray-700 flex justify-center items-center text-sm'>
-        <p className='text-gray-500'>
-          Разработка{' '}
-          <a
-            href='https://spinej.ru'
-            className='hover:text-white transition-colors '
-          >
-            SAG
-          </a>
-        </p>
-      </div>
+      <Creator />
     </div>
   </footer>
 )

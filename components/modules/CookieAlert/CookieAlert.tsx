@@ -13,7 +13,7 @@ const CookieAlert = ({
     } else {
       toast.error(
         // eslint-disable-next-line max-len
-        'Файл cookie не может быть установлен! Пожалуйста, разблокируйте этот сайт с помощью настроек cookie ваше браузера...'
+        'Файл cookie не может быть установлен! Пожалуйста, разблокируйте этот сайт с помощью настроек cookie вашего браузера...'
       )
     }
   }
@@ -32,6 +32,13 @@ const CookieAlert = ({
         соглашаетесь с нашей{' '}
         <a href='/privacy-policy' className='underline hover:text-blue-600'>
           политикой использования файлов cookie
+        </a>{' '}
+        и{' '}
+        <a
+          href='/data-processing-agreement'
+          className='underline hover:text-blue-600'
+        >
+          политикой обработки персональных данных
         </a>
         . Вы можете изменить настройки cookie в любое время в настройках вашего
         браузера.
