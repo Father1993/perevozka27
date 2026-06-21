@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-'use client'
+import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -42,12 +42,12 @@ const NotFound = () => (
         Страница не найдена
       </p>
       <div className='mt-6'>
-        <a
+        <Link
           href='/'
           className='inline-block px-6 py-3 text-white bg-green-600 rounded-lg hover:bg-green-700 transition duration-300'
         >
           Вернуться на главную
-        </a>
+        </Link>
       </div>
     </div>
   </main>

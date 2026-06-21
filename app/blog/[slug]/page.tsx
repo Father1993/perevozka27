@@ -5,9 +5,10 @@ import PostPage from '@/components/templates/BlogPage/PostPage/PostPage'
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }): Promise<Metadata> {
-  const post = getPostData(params.slug)
+  const { slug } = await params
+  const post = getPostData(slug)
 
   return {
     title: `${post.title} | Блог Perevozka27`,
@@ -28,8 +29,13 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }))
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const post = getPostData(params.slug)
+export default async function BlogPost({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params
+  const post = getPostData(slug)
 
   return <PostPage post={post} />
 }
